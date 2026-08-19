@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hello website</title>
+</head>
+<body>
+<p>Hello {{name}}</p>
+{% if age>=18 %}
+<p>You are an adult</p>
+{% else %}
+<p>You are a minor</p>
+{% endif %}
+<p>Names:</p>
+{% for n in names %}
+    <p>{{n}}</p>
+{% endfor %}
+<p>This is served by Flask</p>
+<form method="POST">
+    <input type="text" name="todo">
+    <button type="submit">Add Todo</button>
+</form>
+{%  for todo in todos %}
+    <p>{{ todo }}</p>
+{% endfor %}
+</body>
+</html>
