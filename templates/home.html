@@ -1,26 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Hello website</title>
+    <title>Todo List</title>
 </head>
 <body>
-<p>Hello {{name}}</p>
-{% if age>=18 %}
-<p>You are an adult</p>
-{% else %}
-<p>You are a minor</p>
-{% endif %}
-<p>Names:</p>
-{% for n in names %}
-    <p>{{n}}</p>
-{% endfor %}
-<p>This is served by Flask</p>
-<form method="POST">
-    <input type="text" name="todo">
-    <button type="submit">Add Todo</button>
-</form>
-{%  for todo in todos %}
-    <p>{{ todo }}</p>
-{% endfor %}
+    <h1>My Todo List</h1>
+    <form method="POST">
+        <input type="text" name="todo" placeholder="Add a new todo">
+        <button type="submit">Add Todo</button>
+    </form>
+    <ul>
+        {% for todo in todos %}
+        <li>{{ todo }}</li>
+        {% endfor %}
+    </ul>
 </body>
 </html>
