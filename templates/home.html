@@ -9,10 +9,17 @@
         <input type="text" name="todo" placeholder="Add a new todo">
         <button type="submit">Add Todo</button>
     </form>
-    <ul>
+    <ol>
         {% for todo in todos %}
-        <li>{{ todo }}</li>
+        <li>{{ todo.text }}</li>
+        {% if todo.completed==True %}
+            <p>Completed!</p>
+            <a href="/completed/{{ loop.index0 }}">Undo</a>
+        {% else %}
+        <a href="/completed/{{ loop.index0 }}">Complete</a>
+        {% endif %}
+        <a href="/delete/{{  loop.index0  }}">Delete</a>
         {% endfor %}
-    </ul>
+    </ol>
 </body>
 </html>
