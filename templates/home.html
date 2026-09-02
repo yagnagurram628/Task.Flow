@@ -9,6 +9,9 @@
         <input type="text" name="todo" placeholder="Add a new todo">
         <button type="submit">Add Todo</button>
     </form>
+    {% if error %}
+        <p>{{ error }}</p>
+    {% endif %}
     <ol>
         {% for todo in todos %}
         <li>{{ todo.text }}</li>
@@ -18,6 +21,7 @@
         {% else %}
         <a href="/completed/{{ loop.index0 }}">Complete</a>
         {% endif %}
+        <a href="/edit/{{  loop.index0  }}">Edit</a>
         <a href="/delete/{{  loop.index0  }}">Delete</a>
         {% endfor %}
     </ol>
