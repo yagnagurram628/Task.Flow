@@ -17,12 +17,12 @@
         <li>{{ todo.text }}</li>
         {% if todo.completed==True %}
             <p>Completed!</p>
-            <a href="/completed/{{ loop.index0 }}">Undo</a>
+            <a href="{{ url_for('completed', id=todo.id) }}">Undo</a>
         {% else %}
-        <a href="/completed/{{ loop.index0 }}">Complete</a>
+        <a href="{{ url_for('completed', id=todo.id) }}">Complete</a>
         {% endif %}
-        <a href="/edit/{{  loop.index0  }}">Edit</a>
-        <a href="/delete/{{  loop.index0  }}">Delete</a>
+        <a href="{{ url_for('edit', id=todo.id) }}">Edit</a>
+        <a href="{{ url_for('delete', id=todo.id) }}">Delete</a>
         {% endfor %}
     </ol>
 </body>
