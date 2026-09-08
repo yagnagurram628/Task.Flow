@@ -28,7 +28,7 @@ Task.Flow allows users to add, edit, complete, undo, and delete tasks through a 
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yagnagurram628/learning-flask.git
+   git clone https://github.com/yagnagurram628/Task.Flow.git
    ```
 
 2. Navigate to the project directory:
