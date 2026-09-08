@@ -1,0 +1,119 @@
+body {
+    background-color: #121212;
+    color: white;
+    font-family:  Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 40px;
+}
+.heading  {
+    text-align: center;
+    margin-bottom: 30px;
+}
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 30px;
+}
+form input {
+    background-color: #1e1e1e;
+    color: white;
+    border: 1px solid #444;
+    border-radius: 5px;
+    padding: 10px;
+    width: 100%;
+    max-width: 300px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+form button {
+    padding: 10px 18px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.2s ease;
+}
+.todo-item {
+    background-color: #1e1e1e;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.todo-actions a {
+    color: white;
+    text-decoration: none;
+    margin-left: 10px;
+    padding: 6px 10px;
+    border-radius: 5px;
+    background-color: #333;
+    transition: background-color 0.2s ease;
+}
+form button:hover {
+    background-color: #555;
+}
+.completed {
+    text-decoration: line-through;
+    opacity: 0.5;
+}
+.todo-list {
+    max-width: 800px;
+    margin: 0 auto;
+}
+.todo-text p {
+    margin: 0;
+}
+.complete-btn{
+    background-color: rgba(46, 125, 50, 0.35) !important;
+}
+.edit-btn {
+    background-color: rgba(50, 100, 180, 0.35) !important;
+}
+.delete-btn {
+    background-color: rgba(180, 50, 50, 0.35) !important;
+}
+.complete-btn:hover {
+    background-color: rgba(46, 125, 50, 0.6) !important;
+}
+
+.edit-btn:hover {
+    background-color: rgba(50, 100, 180, 0.6) !important;
+}
+
+.delete-btn:hover {
+    background-color: rgba(180, 50, 50, 0.6) !important;
+}
+.edit-form {
+    flex-direction: column;
+    margin-top: 40px;
+}
+
+.edit-form input {
+    max-width: 500px;
+}
+
+.edit-form button {
+    margin-top: 5px;
+}
+.heading h1 {
+    color: #fff;
+    text-shadow: 0 0 8px rgba(255, 230, 80, 0.35);
+}
+@media (max-width: 600px) {
+    .todo-item {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+    }
+    .todo-actions {
+        display: flex;
+        justify-content: flex-end;
+    }
+}

@@ -1,29 +1,37 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Todo List</title>
+    <title>TaskFlow</title>
+    <link rel="stylesheet" href="{{ url_for('static',  filename='style.css') }}"
 </head>
 <body>
-    <h1>My Todo List</h1>
+    <div class="heading">
+        <h1>TaskFlow</h1>
+    </div>
     <form method="POST">
-        <input type="text" name="todo" placeholder="Add a new todo">
-        <button type="submit">Add Todo</button>
+        <input type="text" name="todo" placeholder="Add a new task">
+        <button type="submit">Add Task</button>
     </form>
     {% if error %}
         <p>{{ error }}</p>
     {% endif %}
-    <ol>
+    <div class="todo-list">
         {% for todo in todos %}
-        <li>{{ todo.text }}</li>
-        {% if todo.completed==True %}
-            <p>Completed!</p>
-            <a href="{{ url_for('completed', id=todo.id) }}">Undo</a>
-        {% else %}
-        <a href="{{ url_for('completed', id=todo.id) }}">Complete</a>
-        {% endif %}
-        <a href="{{ url_for('edit', id=todo.id) }}">Edit</a>
-        <a href="{{ url_for('delete', id=todo.id) }}">Delete</a>
+        <div class="todo-item">
+            <div class="todo-text">
+                <p class="{%  if todo.completed==True %}completed{% endif %}">{{ todo.text }}</p>
+            </div>
+            <div class="todo-actions">
+                {% if todo.completed==True %}
+                    <a <a class="complete-btn" href="{{ url_for('completed', id=todo.id) }}">Undo</a>
+                {% else %}
+                    <a class="complete-btn" href="{{ url_for('completed', id=todo.id) }}">Complete</a>
+                {% endif %}
+                    <a class="edit-btn" href="{{ url_for('edit', id=todo.id) }}">Edit</a>
+                    <a class="delete-btn" href="{{ url_for('delete', id=todo.id) }}">Delete</a>
+            </div>
+        </div>
         {% endfor %}
-    </ol>
+    </div>
 </body>
 </html>

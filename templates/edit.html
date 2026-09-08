@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html>
-    <form method="POST">
+<head>
+    <title>Edit Task</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+    <form method="POST" class="edit-form">
         <input type="text" name="text" value="{{ text }}">
         <button type="Submit">Save</button>
     </form>
